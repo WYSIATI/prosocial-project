@@ -39,8 +39,8 @@ p {
 
 
 .header1 {
-font-size:36px;
-
+font-size:30px;
+color: #000000;
 }
 
 
@@ -535,4 +535,3 @@ body {
 #hiderdiv1:hover #hiderel1 {
   display: block;
 }
-
