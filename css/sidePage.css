@@ -34,8 +34,15 @@ p {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
-    color: #696969;
+    color:#7f8c8d;
 }
+
+
+.header1 {
+font-size:30px;
+color: #000000;
+}
+
 
 @media(min-width:768px) {
     p {
@@ -528,4 +535,3 @@ body {
 #hiderdiv1:hover #hiderel1 {
   display: block;
 }
-
