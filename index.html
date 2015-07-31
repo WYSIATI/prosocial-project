@@ -40,14 +40,52 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+    <script type='text/javascript'>
+            var init = function(){
+                document.body.style.background="url(pic/background.jpg) repeat fixed";
+            }
+            var correct = function(){
+                confirm("You are correct!");
+            }
+            var incorrect = function(){
+                confirm("You are incorrect!");
+            }
+            var toQuestion1 = function(){
+                document.getElementById("question1").style.display="";
+                document.getElementById("question2").style.display="none";
+                document.getElementById("question3").style.display="none";
+                document.getElementById("question4").style.display="none";
+                document.getElementById("answer1").style.display="none";
+            }
+            var toQuestion2 = function(){
+                document.getElementById("question1").style.display="none";
+                document.getElementById("question2").style.display="";
+                document.getElementById("question3").style.display="none";
+                document.getElementById("question4").style.display="none";
+                document.getElementById("answer2").style.display="none";
+            }
+            var toQuestion3 = function(){
+                document.getElementById("question1").style.display="none";
+                document.getElementById("question2").style.display="none";
+                document.getElementById("question3").style.display="";
+                document.getElementById("question4").style.display="none";
+                document.getElementById("answer3").style.display="none";
+            }
+            var toQuestion4 = function(){
+                document.getElementById("question1").style.display="none";
+                document.getElementById("question2").style.display="none";
+                document.getElementById("question3").style.display="none";
+                document.getElementById("question4").style.display="";
+                document.getElementById("answer4").style.display="none";
+            }
+        </script>
 
 
 
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="toQuestion1();init();">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -227,11 +265,76 @@
 
 <!-- FoF Section -->
     <section id="fof" data-speed="2" class="container content-section text-center">
-        <div class="row fade">
+         <div class="row fade">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Fact or Fiction</h2>
-                    <p>This section still under construction!</p>
+                    <div class='' id='questions' align="center">
+            <h2>Fact Or Fiction</h2>
+            <div class="page" id="question1">
+                <p>
+                    Drinking water can lessen the effects of a hangover.
+                </p>
+                <br>
+                <a  class="btn btn-default btn-lg" onclick='correct();document.getElementById("answer1").style.display="";'>Fact</a>
+                <a  class="btn btn-default btn-lg" onclick='incorrect();document.getElementById("answer1").style.display="";'>Fiction</a>
+                <br>
+                <p id='answer1'>
+                    FACT! While food and water may ease some of the symptoms, they won't cure a hangover. 
+                    The best way to avoid one is to moderate your drinking and have water between alcoholic drinks. Remember that water won't make you any less drunk or protect your liver.
+                </p>
+                <br>
+                <img src='img/right-arrow.png' alt='next question' onclick='toQuestion2()' style='width:50px;height:50px;'>
+            </div>
+            <div class="page" id="question2">
+                <p>
+                    Beer gets you less drunk.
+                </p>
+                <br>
+                <a  class="btn btn-default btn-lg" onclick='incorrect();document.getElementById("answer2").style.display="";'>Fact</a>
+                <a  class="btn btn-default btn-lg" onclick='correct();document.getElementById("answer2").style.display="";'>Fiction</a>
+                <br>
+                <p id='answer2'>
+                    FICTION! An average pint of beer (ABV 5%), large glass of wine (250ml, ABV 11%) or a 'large' double vodka (70ml, ABV 38 to 40%) all have around 2.8 units of alcohol. This is what makes you drunk chemically, and the faster you drink the full 2.8 units, the higher your peak blood level. But there are a wide range of factors that can affect how drunk you feel including your expectations.
+                </p>
+                <br>
+                <img src='img/left-arrow.png' alt='last question' onclick='toQuestion1()' style='width:50px;height:50px;'>
+                <img src='img/right-arrow.png' alt='next question' onclick='toQuestion3()' style='width:50px;height:50px;'>
+            </div>
+            <div class="page" id="question3">
+                <p>
+                    Your body develops a tolerance to alcohol, so you can safely drink more.
+                </p>
+                <br>
+                <a  class="btn btn-default btn-lg" onclick='incorrect();document.getElementById("answer3").style.display=""'>Fact</a>
+                <a  class="btn btn-default btn-lg" onclick='correct();document.getElementById("answer3").style.display="";'>Fiction</a>
+                <br>
+                <p id='answer3'>
+                    FICTION! The more you drink the more damage your body will sustain and the greater the risks become. Tolerance can actually be seen as a warning sign that your body has started to be affected by alcohol.
+                </p>
+                <br>
+                <img src='img/left-arrow.png' alt='last question' onclick='toQuestion2()' style='width:50px;height:50px;'>
+                <img src='img/right-arrow.png' alt='next question' onclick='toQuestion4()' style='width:50px;height:50px;'>
+            </div>
+            <div class="page" id="question4">
+                <p>
+                    Alcohol is a great way to relax and reduce stress.
+                </p>
+                <br>
+                <a  class="btn btn-default btn-lg" onclick='incorrect();document.getElementById("answer4").style.display="";'>Fact</a>
+                <a  class="btn btn-default btn-lg" onclick='correct();document.getElementById("answer4").style.display="";'>Fiction</a>
+                <br>
+                <p id='answer4'>
+                    FICTION! Alcohol increases the level of stress that is placed on the body. Adrenaline levels increase in the body as we drink. We may feel more relaxed when we drink alcohol, but the body actually comes under additional stress.
+                </p>
+                <br>
+                <img src='img/left-arrow.png' alt='last question' onclick='toQuestion3()' style='width:50px;height:50px;'>
+            </div>
+
+        </div>
+        
+
+
+
                 </div>
             </div>
         </div>
@@ -347,7 +450,7 @@ and fruitfully, and is able to make a contribution to her or his own community. 
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Need Help?</h2>
                 <p>There is only so much you can do as a friend…</p>
-                <p>Still not sure what to do? Ask a PRO <a href="#">now</a></p>
+                <p>Still not sure what to do? Ask a PRO <a href="need_help.html">now</a></p>
                 <a href="#" class="btn btn-default btn-lg">Resources</a>
             </div>
         </div>
